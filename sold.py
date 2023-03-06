@@ -10,18 +10,14 @@ os.chdir(DIR)
 
 def sold(args):
     data = {
-        "product name":[args.product_name], 
+        "id":[args.id],
         "count":[args.count],
         "sell date":[args.sell_date], 
         "sell price":[args.sell_price], 
         }
     df = pandas.DataFrame(data)
-    with open("sold.csv", mode = "a") as file:
-        for i in df:
-            if i not in df:
-                new_df = pandas.DataFrame(data)
-                with open("sold.csv", mode = "a") as file:
-                    new_df.to_csv(file, header = file.tell()==0, index=False)
-        else:    
-            df.to_csv(file, header=file.tell()==0, index=False)   
+    with open("sold.csv", mode = "a+") as file:  
+        total_price = args.count * args.sell_price
+        df["total price"] = total_price
+        df.to_csv(file, header=file.tell()==0, index=False)   
     print('OK')  
