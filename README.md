@@ -15,7 +15,7 @@ Assuming Python and Pip is installed, the following third-party libraries have t
 
 PANDAS
 
-pip install pandas
+	pip install pandas
 
 TABULATE
 
@@ -96,29 +96,4 @@ Profityear: For the profit of a whole year, fill in the year you want to see the
 	python main.py profit 2022
 
 
-## API Reference
-
-#### Get all items
-
-```http
-  GET /api/items
-```
-
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get item
-
-```http
-  GET /api/items/${id}
-```
-
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-#### add(num1, num2)
-
-Takes two numbers and returns the sum.
 
